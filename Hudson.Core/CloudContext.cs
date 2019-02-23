@@ -14,11 +14,12 @@ namespace Hudson.Core
 	/// </summary>
 	public class CloudContext
 	{
-		private const string HEADER_NAME_REQUESTID = "RequestID";
-		private const string HEADER_NAME_PREVIOUS_SPANID = "SourceSpanID";
-		private const string HEADER_NAME_CALL_INDEX = "CallIndex";
+		private const string HEADER_NAME_REQUESTID = "pc-req-id";
+		private const string HEADER_NAME_PREVIOUS_SPANID = "pc-prev-span-id";
+        private const string HEADER_NAME_CALL_INDEX = "pc-call-index";
+        private const string HEADER_GROUP_NAME = "pc-gp-name";
 
-		private int nextCallIndex = 0;
+        private int nextCallIndex = 0;
 
 		public string RequestID { get; private set; }
 		/// <summary>
@@ -34,6 +35,8 @@ namespace Hudson.Core
 		/// </summary>
 		public string CallIndex { get; private set; }
 
+        public string GroupName { get; private set; }
+
 		public CloudContext(IHttpContextAccessor httpContextAccessor, IIdWorker idWorker)
 		{
 			var httpContext = httpContextAccessor.HttpContext;
@@ -42,8 +45,9 @@ namespace Hudson.Core
 
 			PreviousSpanID = GetRequestHeader(httpContext, HEADER_NAME_PREVIOUS_SPANID, "");
 			CallIndex = GetRequestHeader(httpContext, HEADER_NAME_CALL_INDEX, "1");
+            GroupName = GetRequestHeader(httpContext, HEADER_GROUP_NAME, "");
 
-			CurrentSpanID = idWorker.NextSpanId();
+            CurrentSpanID = idWorker.NextSpanId();
 		}
 		/// <summary>
 		/// 为即将发起的请求生成context信息, 并附着到请求头上
@@ -54,6 +58,7 @@ namespace Hudson.Core
 			SetRequestHeader(requestMessage, HEADER_NAME_REQUESTID, RequestID);
 			SetRequestHeader(requestMessage, HEADER_NAME_PREVIOUS_SPANID, CurrentSpanID);
 			SetRequestHeader(requestMessage, HEADER_NAME_CALL_INDEX, Interlocked.Increment(ref nextCallIndex).ToString());
+            SetRequestHeader(requestMessage, HEADER_GROUP_NAME, GroupName);
 		}
 
 		#region 帮助方法

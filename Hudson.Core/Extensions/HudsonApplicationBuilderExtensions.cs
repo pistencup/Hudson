@@ -8,16 +8,16 @@ using Hudson.Core.RequestRecorder;
 
 namespace Hudson.Core
 {
-	public static class EurekaAssistantApplicationBuilderExtensions
+	public static class HudsonApplicationBuilderExtensions
 	{
 		/// <summary>
 		/// 在Configure方法中增加处理中间件, 需要放在app.UseMvc方法之前, 默认启用请求记录器
 		/// </summary>
 		/// <param name="app"></param>
 		/// <returns></returns>
-		public static IApplicationBuilder UseEurekaAssistant(this IApplicationBuilder app)
+		public static IApplicationBuilder UseHudson(this IApplicationBuilder app)
 		{
-			return app.UseEurekaAssistant(true);
+			return app.UseHudson(true);
 		}
 
 		/// <summary>
@@ -26,7 +26,7 @@ namespace Hudson.Core
 		/// <param name="app"></param>
 		/// <param name="useRequestRecoder">是否启用请求记录器功能</param>
 		/// <returns></returns>
-		public static IApplicationBuilder UseEurekaAssistant(this IApplicationBuilder app, bool useRequestRecoder)
+		public static IApplicationBuilder UseHudson(this IApplicationBuilder app, bool useRequestRecoder)
 		{
 			if (useRequestRecoder)
 			{

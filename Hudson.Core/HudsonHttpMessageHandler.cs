@@ -14,10 +14,10 @@ namespace Hudson.Core
 	/// <summary>
 	/// HttpMessageHandler, 用于Discovery和请求头修改.
 	/// </summary>
-	public class EurekaAssistantHttpMessageHandler : DiscoveryHttpMessageHandler
+	public class HudsonHttpMessageHandler : DiscoveryHttpMessageHandler
 	{
 		private readonly IHttpContextAccessor httpContextAccessor = null;
-		public EurekaAssistantHttpMessageHandler(IHttpContextAccessor httpContextAccessor, IDiscoveryClient discoveryClient, ILogger<DiscoveryHttpClientHandler> logger = null) : base(discoveryClient, logger)
+		public HudsonHttpMessageHandler(IHttpContextAccessor httpContextAccessor, IDiscoveryClient discoveryClient, ILogger<DiscoveryHttpClientHandler> logger = null) : base(discoveryClient, logger)
 		{
 			this.httpContextAccessor = httpContextAccessor;
 		}

@@ -16,7 +16,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Hudson.Core
 {
-	public static class EurekaAssistantServiceCollectionExtensions
+	public static class HudsonServiceCollectionExtensions
 	{
 		/// <summary>
 		/// 向DI注册DiscoveryClient服务和RestService
@@ -24,7 +24,7 @@ namespace Hudson.Core
 		/// <param name="services"></param>
 		/// <param name="configuration"></param>
 		/// <returns></returns>
-		public static AssistantServiceConfigurer BeginConfigureEurekaAssistant(this IServiceCollection services, IConfiguration configuration, params Assembly[] assemblies)
+		public static HudsonServiceConfigurer BeginConfigureHudson(this IServiceCollection services, IConfiguration configuration, params Assembly[] assemblies)
 		{
 			services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 			services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
@@ -41,10 +41,10 @@ namespace Hudson.Core
 			//eureka 相关service
 			services.AddDiscoveryClient(configuration);
 
-			services.AddTransient<DiscoveryHttpMessageHandler, EurekaAssistantHttpMessageHandler>();
+			services.AddTransient<DiscoveryHttpMessageHandler, HudsonHttpMessageHandler>();
 			//services.AddTransient<DiscoveryHttpMessageHandler>(provider => provider.GetService<EurekaAssistantHttpMessageHandler>());
 
-			return new AssistantServiceConfigurer(services, configuration);
+			return new HudsonServiceConfigurer(services, configuration);
 		}
 	}
 }

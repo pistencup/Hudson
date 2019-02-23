@@ -13,12 +13,12 @@ namespace Hudson.Core
 	/// 服务配置器
 	/// 当需要返回 IServiceCollection 时, 以Complete方法结束调用.
 	/// </summary>
-	public class AssistantServiceConfigurer
+	public class HudsonServiceConfigurer
 	{
 		private readonly IServiceCollection services;
 		private readonly IConfiguration configuration;
 
-		public AssistantServiceConfigurer(IServiceCollection services, IConfiguration configuration)
+		public HudsonServiceConfigurer(IServiceCollection services, IConfiguration configuration)
 		{
 			//this.services = services;
 			//this.configuration = configuration;
@@ -56,7 +56,7 @@ namespace Hudson.Core
 		/// </summary>
 		/// <param name="assembly"></param>
 		/// <returns></returns>
-		public AssistantServiceConfigurer AddServiceClients(Assembly assembly)
+		public HudsonServiceConfigurer AddServiceClients(Assembly assembly)
 		{
 			if (assembly != null)
 			{
@@ -69,7 +69,7 @@ namespace Hudson.Core
 		/// </summary>
 		/// <param name="types"></param>
 		/// <returns></returns>
-		public AssistantServiceConfigurer AddServiceClients(IEnumerable<Type> types)
+		public HudsonServiceConfigurer AddServiceClients(IEnumerable<Type> types)
 		{
 			if (types != null)
 			{
@@ -85,7 +85,7 @@ namespace Hudson.Core
 		/// </summary>
 		/// <param name="type"></param>
 		/// <returns></returns>
-		public AssistantServiceConfigurer AddServiceClient(Type type)
+		public HudsonServiceConfigurer AddServiceClient(Type type)
 		{
 			var attr = GetServiceClientAttribute(type);
 
@@ -94,7 +94,7 @@ namespace Hudson.Core
 			return this;
 		}
 
-		public AssistantServiceConfigurer AddServiceClient<T>()
+		public HudsonServiceConfigurer AddServiceClient<T>()
 		{
 			return AddServiceClient(typeof(T));
 		}
