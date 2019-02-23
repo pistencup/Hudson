@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.Core", "Hudson.Core\Hudson.Core.csproj", "{BD043D88-0D22-45C7-B50E-FFDF562309CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3EDD84F-DA1B-42CC-A85D-44FEADF9887A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{B79DB188-C117-4A0E-98DD-FB624075BF11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{8783E7E8-0EC4-493C-8A0C-5F30E57A4A96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{6A9E6932-7FA1-4220-B63A-8030A65CCF30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD043D88-0D22-45C7-B50E-FFDF562309CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD043D88-0D22-45C7-B50E-FFDF562309CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD043D88-0D22-45C7-B50E-FFDF562309CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD043D88-0D22-45C7-B50E-FFDF562309CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8783E7E8-0EC4-493C-8A0C-5F30E57A4A96} = {B79DB188-C117-4A0E-98DD-FB624075BF11}
+		{6A9E6932-7FA1-4220-B63A-8030A65CCF30} = {B79DB188-C117-4A0E-98DD-FB624075BF11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69A257C1-FE38-4D79-874A-4EB0F5583703}
+	EndGlobalSection
+EndGlobal
