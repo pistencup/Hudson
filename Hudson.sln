@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApiServer.Api", "Samp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.SampleClient", "Hudson.SampleClient\Hudson.SampleClient.csproj", "{B3A2413D-5756-45C9-8FC0-100FEBCC2140}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A2413D-5756-45C9-8FC0-100FEBCC2140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A2413D-5756-45C9-8FC0-100FEBCC2140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A2413D-5756-45C9-8FC0-100FEBCC2140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A2413D-5756-45C9-8FC0-100FEBCC2140}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{A0957DDD-360F-4A2A-8378-2C617E2D36A3} = {8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78}
 		{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795} = {8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78}
 		{8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78} = {B79DB188-C117-4A0E-98DD-FB624075BF11}
+		{B3A2413D-5756-45C9-8FC0-100FEBCC2140} = {6A9E6932-7FA1-4220-B63A-8030A65CCF30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69A257C1-FE38-4D79-874A-4EB0F5583703}

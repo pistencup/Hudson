@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var dic = ViewData["dic"] as Dictionary<string, string>;
+}
+
+<div class="row" style="margin-top:100px;">
+    <div class="col-md-12">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kv in dic)
+                {
+                    <tr>
+                        <td>@kv.Key</td>
+                        <td>@kv.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
