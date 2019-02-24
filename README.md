@@ -57,7 +57,7 @@ namespace SampleServer.Api
         private readonly CloudContext cloudContext;
         private readonly ISample sampleClient;
         private readonly ISampleApi sampleApiClient;
-        //通过构造函数获得Api对象
+        //通过ServiceProvider的能力从构造函数获得Api对象
         public HomeController(ISample sampleClient, ISampleApi sampleApiClient, CloudContext cloudContext)
         {
             this.cloudContext = cloudContext;
