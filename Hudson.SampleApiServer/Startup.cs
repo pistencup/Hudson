@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Hudson.Core;
 
 namespace Hudson.SampleApiServer
 {
@@ -25,6 +26,11 @@ namespace Hudson.SampleApiServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //注册 EurekaAssistant 相关的服务
+            services.BeginConfigureHudson(Configuration)
+                    .AddServiceClient<SampleServer.Api.ISample>()
+                    .Complete();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +40,9 @@ namespace Hudson.SampleApiServer
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //加入 EurekaAssistant 管道中间件
+            app.UseHudson();
 
             app.UseMvc();
         }

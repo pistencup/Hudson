@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.Core", "Hudson.Core\Hudson.Core.csproj", "{BD043D88-0D22-45C7-B50E-FFDF562309CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hudson.Core", "Hudson.Core\Hudson.Core.csproj", "{BD043D88-0D22-45C7-B50E-FFDF562309CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3EDD84F-DA1B-42CC-A85D-44FEADF9887A}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,13 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{8783E7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{6A9E6932-7FA1-4220-B63A-8030A65CCF30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.SampleServer", "Hudson.SampleServer\Hudson.SampleServer.csproj", "{13FE9F1D-F0FD-40B8-9A7A-D07F6A2CCCCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hudson.SampleServer", "Hudson.SampleServer\Hudson.SampleServer.csproj", "{13FE9F1D-F0FD-40B8-9A7A-D07F6A2CCCCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hudson.SampleApiServer", "Hudson.SampleApiServer\Hudson.SampleApiServer.csproj", "{09FE49AE-340B-42DF-9D3D-F92F24A1DDCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hudson.SampleApiServer", "Hudson.SampleApiServer\Hudson.SampleApiServer.csproj", "{09FE49AE-340B-42DF-9D3D-F92F24A1DDCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleServer.Api", "SampleServer.Api\SampleServer.Api.csproj", "{A0957DDD-360F-4A2A-8378-2C617E2D36A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServer.Api", "SampleServer.Api\SampleServer.Api.csproj", "{A0957DDD-360F-4A2A-8378-2C617E2D36A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApiServer.Api", "SampleApiServer.Api\SampleApiServer.Api.csproj", "{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApiServer.Api", "SampleApiServer.Api\SampleApiServer.Api.csproj", "{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,8 +63,9 @@ Global
 		{6A9E6932-7FA1-4220-B63A-8030A65CCF30} = {B79DB188-C117-4A0E-98DD-FB624075BF11}
 		{13FE9F1D-F0FD-40B8-9A7A-D07F6A2CCCCB} = {8783E7E8-0EC4-493C-8A0C-5F30E57A4A96}
 		{09FE49AE-340B-42DF-9D3D-F92F24A1DDCD} = {8783E7E8-0EC4-493C-8A0C-5F30E57A4A96}
-		{A0957DDD-360F-4A2A-8378-2C617E2D36A3} = {6A9E6932-7FA1-4220-B63A-8030A65CCF30}
-		{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795} = {6A9E6932-7FA1-4220-B63A-8030A65CCF30}
+		{A0957DDD-360F-4A2A-8378-2C617E2D36A3} = {8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78}
+		{B82BD25C-55E4-4B98-8ABE-6C7A6B5EE795} = {8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78}
+		{8AAE7E22-8FE4-4191-BA61-DBB2CAB90B78} = {B79DB188-C117-4A0E-98DD-FB624075BF11}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69A257C1-FE38-4D79-874A-4EB0F5583703}

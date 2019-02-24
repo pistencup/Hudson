@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Refit" Version="4.6.90" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Hudson.Core\Hudson.Core.csproj" />
   </ItemGroup>
 

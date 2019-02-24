@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hudson.SampleServer.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
         private readonly CloudContext cloudContext;
         IConfiguration _Configuration = null;
@@ -18,7 +18,14 @@ namespace Hudson.SampleServer.Controllers
             _Configuration = Configuration;
         }
 
-        public string getCloudContext()
+        public string get123()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(cloudContext);
+        }
+
+        [Route("/get321")]
+        [HttpGet]
+        public string get321()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(cloudContext);
         }

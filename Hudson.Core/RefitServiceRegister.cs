@@ -16,23 +16,23 @@ namespace Hudson.Core
 	{
 		internal static RefitServiceRegister Instance { get; } = new RefitServiceRegister();
 
-		private readonly MethodInfo registBaseServiceMethod = null;
 		private readonly RefitSettings refitSettings = null;
-		private RefitServiceRegister()
+        private MethodInfo registBaseServiceMethod = null;
+        private RefitServiceRegister()
 		{
-			registBaseServiceMethod = GetType().GetMethod("RegistBaseService", BindingFlags.NonPublic | BindingFlags.Instance);
-
-			refitSettings = new RefitSettings();
+            registBaseServiceMethod = this.GetType().GetMethod("RegisterBaseService", BindingFlags.NonPublic | BindingFlags.Instance);
+            refitSettings = new RefitSettings();
 		}
-		/// <summary>
-		/// 注册 Refit 服务, 并设置基地址和 HttpMessageHandler
-		/// </summary>
-		/// <param name="services"></param>
-		/// <param name="type"></param>
-		/// <param name="baseUrl"></param>
-		/// <param name="workWithEureka"></param>
-		public void RegisterService(IServiceCollection services, Type type, string baseUrl, bool workWithEureka)
+        /// <summary>
+        /// 注册 Refit 服务, 并设置基地址和 HttpMessageHandler
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="type"></param>
+        /// <param name="baseUrl"></param>
+        /// <param name="workWithEureka"></param>
+        public void RegisterService(IServiceCollection services, Type type, string baseUrl, bool workWithEureka)
 		{
+
 			var method = registBaseServiceMethod.MakeGenericMethod(type);
 
 			var httpClientBuilder = method.Invoke(this, new object[] { services }) as IHttpClientBuilder;
@@ -53,7 +53,7 @@ namespace Hudson.Core
 		private IHttpClientBuilder RegisterBaseService<T>(IServiceCollection services) where T : class
 		{
 			services.AddSingleton(provider => RequestBuilder.ForType<T>(GetRefitSettings()));
-
+            
 			return services.AddHttpClient(typeof(T).Name)
 						   .AddTypedClient((client, serviceProvider) => RestService.For<T>(client, serviceProvider.GetService<IRequestBuilder<T>>()));
 		}
