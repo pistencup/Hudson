@@ -9,7 +9,7 @@ Hudson是[pistencup](https://github.com/pistencup/introduction)工具包的dotNET部分
 
 2. 在包含服务Api定义的项目中, 需要从nuget或自行编译添加对[Refit](https://github.com/reactiveui/refit)项目的依赖.
 
-3. Hudson依赖[Steeltoe.Discovery](https://github.com/SteeltoeOSS/Discovery)来提供向eureka注册服务和从eureka获取服务列表的功能.
+3. Hudson依赖[Steeltoe.Discovery](https://github.com/SteeltoeOSS/Discovery)来提供向eureka注册服务和从eureka获取服务列表的能力.
 所以需要向appsetting.json文件添加相关配置:
 ```json
   "spring": {
@@ -57,7 +57,7 @@ namespace SampleServer.Api
         private readonly CloudContext cloudContext;
         private readonly ISample sampleClient;
         private readonly ISampleApi sampleApiClient;
-        //通过ServiceProvider的能力从构造函数获得Api对象
+        //从构造函数获得Api对象
         public HomeController(ISample sampleClient, ISampleApi sampleApiClient, CloudContext cloudContext)
         {
             this.cloudContext = cloudContext;
