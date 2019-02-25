@@ -97,4 +97,4 @@ namespace SampleServer.Api
 
 应用中请 ***不要*** 从构造函数构造`CloudContext`对象, 使用`ServiceProvider`来获取对每个请求共享的对象,避免对调用过程分析造成困扰.
 
-7. 更多功能,请clone并参考示例项目.
+7. 更多例子,请clone并参考示例项目.
